@@ -1,0 +1,56 @@
+let pessoas = [];
+function adicionar() {
+    let nome = document.getElementById("nome").value;
+    let idade = Number(document.getElementById("idade").value);
+
+    if (nome === "" || idade <= 0) {
+        alert("Preencha os campos corretamente!");
+        return;
+    }
+
+    pessoas.push({
+        nome: nome,
+        idade: idade
+    });
+
+    let item = document.createElement("li");
+    item.innerHTML = nome + " - " + idade + " anos";
+
+    document.getElementById("lista").appendChild(item);
+
+    document.getElementById("nome").value = "";
+    document.getElementById("idade").value = "";
+}
+    document.getElementById("resultado").innerHTML = resultado;
+
+function analisar() {
+    if (pessoas.length === 0) {
+        alert("Nenhuma pessoa cadastrada!");
+        return;
+    }
+
+    let resultado = "";
+    let somaIdades = 0;
+
+    for (let i = 0; i < pessoas.length; i++) {
+        let nome = pessoas[i].nome;
+        let idade = pessoas[i].idade;
+
+        somaIdades += idade;
+
+        if (idade < 16) {
+            resultado += nome + " - não pode votar!<br>";
+        } else if (idade < 18 || idade >= 60) {
+            resultado += nome + " - voto facultativo<br>";
+        } else {
+            resultado += nome + " - voto obrigatório<br>";
+        }
+    }
+
+    let media = somaIdades / pessoas.length;
+
+    resultado += `<br><strong>Média das idades: ${media.toFixed(1)} anos</strong>`;
+
+    document.getElementById("resultado").innerHTML = resultado;
+
+    }
