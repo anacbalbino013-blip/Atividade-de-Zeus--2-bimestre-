@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boca de Urna</title>
+</head>
+
+<body>
+
+<h2>Boca de Urna</h2>
+
+<button onclick="votacao()">Iniciar Votação</button>
+
+<script>
+
+function votacao() {
+
+    let continuar = "sim";
+
+    while (continuar == "sim") {
+
+        let idade = parseInt(prompt("Digite sua idade:"));
+
+        let voto = parseInt(prompt("Digite o número do seu voto:"));
+
+        switch (true) {
+
+            case (idade >= 16 && idade <= 17):
+                alert("Voto facultativo.");
+                break;
+
+            case (idade >= 18 && idade < 70):
+                alert("Voto obrigatório.");
+                break;
+
+            case (idade >= 70):
+                alert("Voto facultativo.");
+                break;
+
+            default:
+                alert("Não pode votar.");
+        }
+
+        if (voto == 80) {
+            alert("Você votou no candidato 80.");
+        } else {
+            alert("Voto registrado para outro número.");
+        }
+
+        continuar = prompt("Deseja registrar outro voto? (sim/não)");
+
+    }
+
+    alert("Votação encerrada.");
+}
+
+</script>
+
+</body>
+</html>
