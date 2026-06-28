@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+ <title>Sistema de Notas</title>
+</head>
+<body>
+
+<h2>Sistema de notas</h2>
+
+<input type="number" id="nota" Placeholder="escreva a 
+
+<button onclick="analisar()">analisar</button>
+
+<h3 id="resultado"></h3>
+
+<script>
+
+fuction analisar (){
+let nota =number(document.getElementById("nota").value
+
+let resultado= document.getElementById("resultado")
+
+if (nota >= 6) {
+
+    resultado.textContent = "Aprovado";
+
+  } 
+
+  else if (nota >= 1) {
+
+    resultado.textContent = "Recuperação";
+
+  } 
+
+  else {
+
+    resultado.textContent = "Reprovado"
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
